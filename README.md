@@ -73,3 +73,7 @@ overlapping directories for the same ecosystem and target branch.
 
 Check ecosystem-specific support before copying optional settings:
 [Dependabot options reference](https://docs.github.com/en/code-security/dependabot/working-with-dependabot/dependabot-options-reference).
+
+## License
+
+[MIT](LICENSE)
