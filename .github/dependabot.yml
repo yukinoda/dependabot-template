@@ -1,5 +1,8 @@
 version: 2
 
+# 1. Uncomment the blocks for your stacks.
+# 2. Delete unused blocks (including GitHub Actions if you have no workflows).
+# Paths default to the repository root; change them only for nested projects.
 updates:
   # Keep only if the target repository uses GitHub Actions.
   - package-ecosystem: github-actions
@@ -13,10 +16,7 @@ updates:
         patterns:
           - "*"
 
-  # Uncomment only the ecosystems present in your repository and adjust paths.
   # JavaScript / TypeScript: npm, pnpm, or Yarn.
-  # Copy these optional cooldown and grouping settings to other blocks as needed;
-  # check ecosystem support first (see README.md).
   # - package-ecosystem: npm
   #   directory: "/"
   #   schedule:
@@ -35,35 +35,205 @@ updates:
   #       patterns:
   #         - "*"
 
-  # Python: pip, Poetry, pip-tools, or Pipenv. For uv, use package-ecosystem: uv.
+  # Python: pip, Poetry, pip-tools, or Pipenv.
   # - package-ecosystem: pip
   #   directory: "/"
   #   schedule:
   #     interval: weekly
+  #   cooldown:
+  #     default-days: 3
+  #     semver-major-days: 7
+  #   groups:
+  #     minor-patch:
+  #       applies-to: version-updates
+  #       update-types:
+  #         - minor
+  #         - patch
+  #     security:
+  #       applies-to: security-updates
+  #       patterns:
+  #         - "*"
 
   # Go: directory containing go.mod.
   # - package-ecosystem: gomod
   #   directory: "/"
   #   schedule:
   #     interval: weekly
+  #   cooldown:
+  #     default-days: 3
+  #     semver-major-days: 7
+  #   groups:
+  #     minor-patch:
+  #       applies-to: version-updates
+  #       update-types:
+  #         - minor
+  #         - patch
+  #     security:
+  #       applies-to: security-updates
+  #       patterns:
+  #         - "*"
 
   # Rust: directory containing Cargo.toml (workspace root for workspaces).
   # - package-ecosystem: cargo
   #   directory: "/"
   #   schedule:
   #     interval: weekly
+  #   cooldown:
+  #     default-days: 3
+  #     semver-major-days: 7
+  #   groups:
+  #     minor-patch:
+  #       applies-to: version-updates
+  #       update-types:
+  #         - minor
+  #         - patch
+  #     security:
+  #       applies-to: security-updates
+  #       patterns:
+  #         - "*"
 
   # Docker: directory containing the Dockerfile.
+  # Version updates only; Dependabot security updates are not supported.
   # - package-ecosystem: docker
   #   directory: "/"
   #   schedule:
   #     interval: weekly
+  #   cooldown:
+  #     default-days: 3
+  #     semver-major-days: 7
+  #   groups:
+  #     minor-patch:
+  #       applies-to: version-updates
+  #       update-types:
+  #         - minor
+  #         - patch
 
-  # Terraform: independent root modules sharing the same update settings.
-  # Replace these example paths with your actual Terraform directories.
+  # Terraform: directory containing .tf files.
+  # Version updates only; Dependabot security updates are not supported.
   # - package-ecosystem: terraform
-  #   directories:
-  #     - "/infra/production"
-  #     - "/infra/staging"
+  #   directory: "/"
   #   schedule:
   #     interval: weekly
+  #   cooldown:
+  #     default-days: 3
+  #     semver-major-days: 7
+  #   groups:
+  #     minor-patch:
+  #       applies-to: version-updates
+  #       update-types:
+  #         - minor
+  #         - patch
+
+  # Python: uv.
+  # - package-ecosystem: uv
+  #   directory: "/"
+  #   schedule:
+  #     interval: weekly
+  #   cooldown:
+  #     default-days: 3
+  #     semver-major-days: 7
+  #   groups:
+  #     minor-patch:
+  #       applies-to: version-updates
+  #       update-types:
+  #         - minor
+  #         - patch
+  #     security:
+  #       applies-to: security-updates
+  #       patterns:
+  #         - "*"
+
+  # Ruby: Bundler.
+  # - package-ecosystem: bundler
+  #   directory: "/"
+  #   schedule:
+  #     interval: weekly
+  #   cooldown:
+  #     default-days: 3
+  #     semver-major-days: 7
+  #   groups:
+  #     minor-patch:
+  #       applies-to: version-updates
+  #       update-types:
+  #         - minor
+  #         - patch
+  #     security:
+  #       applies-to: security-updates
+  #       patterns:
+  #         - "*"
+
+  # Java / Kotlin: Maven.
+  # - package-ecosystem: maven
+  #   directory: "/"
+  #   schedule:
+  #     interval: weekly
+  #   cooldown:
+  #     default-days: 3
+  #     semver-major-days: 7
+  #   groups:
+  #     minor-patch:
+  #       applies-to: version-updates
+  #       update-types:
+  #         - minor
+  #         - patch
+  #     security:
+  #       applies-to: security-updates
+  #       patterns:
+  #         - "*"
+
+  # Java / Kotlin: Gradle.
+  # - package-ecosystem: gradle
+  #   directory: "/"
+  #   schedule:
+  #     interval: weekly
+  #   cooldown:
+  #     default-days: 3
+  #     semver-major-days: 7
+  #   groups:
+  #     minor-patch:
+  #       applies-to: version-updates
+  #       update-types:
+  #         - minor
+  #         - patch
+  #     security:
+  #       applies-to: security-updates
+  #       patterns:
+  #         - "*"
+
+  # .NET: NuGet.
+  # - package-ecosystem: nuget
+  #   directory: "/"
+  #   schedule:
+  #     interval: weekly
+  #   cooldown:
+  #     default-days: 3
+  #     semver-major-days: 7
+  #   groups:
+  #     minor-patch:
+  #       applies-to: version-updates
+  #       update-types:
+  #         - minor
+  #         - patch
+  #     security:
+  #       applies-to: security-updates
+  #       patterns:
+  #         - "*"
+
+  # PHP: Composer.
+  # - package-ecosystem: composer
+  #   directory: "/"
+  #   schedule:
+  #     interval: weekly
+  #   cooldown:
+  #     default-days: 3
+  #     semver-major-days: 7
+  #   groups:
+  #     minor-patch:
+  #       applies-to: version-updates
+  #       update-types:
+  #         - minor
+  #         - patch
+  #     security:
+  #       applies-to: security-updates
+  #       patterns:
+  #         - "*"

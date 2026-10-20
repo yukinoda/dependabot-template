@@ -3,18 +3,17 @@
 A small, stack-adaptable Dependabot configuration with weekly checks, a short
 cooldown, and grouped updates.
 
-## Use in an existing repository
+## Use
 
-1. Copy `.github/dependabot.yml` to the same path in the target repository.
-2. Keep the GitHub Actions entry only if the repository has workflows.
-3. Uncomment the examples for the stacks you use, or duplicate a block for an
-   ecosystem from the table below. Set `package-ecosystem` and the directory
-   containing its manifests or lockfiles. Copy optional cooldown and grouping
-   settings from the JavaScript example where supported.
-4. Commit the configuration to the repository's default branch.
+Copy `.github/dependabot.yml` to the same path in your repository, or start with
+GitHub's **Use this template** button. Then:
 
-If you use GitHub's **Use this template** button, the configuration is already in
-the correct location. Customize its ecosystem entries for the new repository.
+1. **Uncomment** the blocks for your stacks.
+2. **Delete** unused blocks, including GitHub Actions if you have no workflows.
+
+Every stack below has a complete block with its own update policy. Paths default
+to `/`; only change them if your manifests live in subdirectories (see Monorepos).
+Commit the file to your repository's default branch to activate it.
 
 ## Pick your ecosystems
 
@@ -63,7 +62,9 @@ overlapping directories for the same ecosystem and target branch.
 - The ecosystem example groups minor and patch version updates, leaving major
   version updates in individual pull requests. Ecosystems without semantic
   versioning may need different grouping rules.
-- Security updates are grouped separately. Enable **Dependabot alerts** and
+- Security updates are grouped separately where supported. Docker and Terraform
+  support version updates only, so their examples omit the security group.
+  Enable **Dependabot alerts** and
   **Dependabot security updates** in the target repository's security settings;
   the configuration alone does not enable them.
 - There are no dependency ignores, private registry credentials, reviewers,
