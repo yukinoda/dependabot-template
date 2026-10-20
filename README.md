@@ -5,8 +5,8 @@ cooldown, and grouped updates.
 
 ## Use
 
-Copy `.github/dependabot.yml` to the same path in your repository, or start with
-GitHub's **Use this template** button. Then:
+Copy [`.github/dependabot.yml`](.github/dependabot.yml) to the same path in your
+repository. Then:
 
 1. **Uncomment** the blocks for your stacks.
 2. **Delete** unused blocks, including GitHub Actions if you have no workflows.
