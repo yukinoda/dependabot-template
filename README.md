@@ -5,15 +5,16 @@ cooldown, and grouped updates.
 
 ## Use in an existing repository
 
-1. Copy `dependabot.yml` to `.github/dependabot.yml` in the target repository.
+1. Copy `.github/dependabot.yml` to the same path in the target repository.
 2. Keep the GitHub Actions entry only if the repository has workflows.
-3. Uncomment and duplicate the ecosystem example for each stack you use. Set
-   `package-ecosystem` and the directory containing its manifests or lockfiles.
+3. Uncomment the examples for the stacks you use, or duplicate a block for an
+   ecosystem from the table below. Set `package-ecosystem` and the directory
+   containing its manifests or lockfiles. Copy optional cooldown and grouping
+   settings from the JavaScript example where supported.
 4. Commit the configuration to the repository's default branch.
 
-The file lives at the root of this template repository so Dependabot only runs
-after you install it in a target repository. If you use GitHub's **Use this
-template** button, move the file to `.github/dependabot.yml` in the new repository.
+If you use GitHub's **Use this template** button, the configuration is already in
+the correct location. Customize its ecosystem entries for the new repository.
 
 ## Pick your ecosystems
 

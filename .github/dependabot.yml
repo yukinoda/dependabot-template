@@ -1,0 +1,69 @@
+version: 2
+
+updates:
+  # Keep only if the target repository uses GitHub Actions.
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: weekly
+    cooldown:
+      default-days: 3
+    groups:
+      actions:
+        patterns:
+          - "*"
+
+  # Uncomment only the ecosystems present in your repository and adjust paths.
+  # JavaScript / TypeScript: npm, pnpm, or Yarn.
+  # Copy these optional cooldown and grouping settings to other blocks as needed;
+  # check ecosystem support first (see README.md).
+  # - package-ecosystem: npm
+  #   directory: "/"
+  #   schedule:
+  #     interval: weekly
+  #   cooldown:
+  #     default-days: 3
+  #     semver-major-days: 7
+  #   groups:
+  #     minor-patch:
+  #       applies-to: version-updates
+  #       update-types:
+  #         - minor
+  #         - patch
+  #     security:
+  #       applies-to: security-updates
+  #       patterns:
+  #         - "*"
+
+  # Python: pip, Poetry, pip-tools, or Pipenv. For uv, use package-ecosystem: uv.
+  # - package-ecosystem: pip
+  #   directory: "/"
+  #   schedule:
+  #     interval: weekly
+
+  # Go: directory containing go.mod.
+  # - package-ecosystem: gomod
+  #   directory: "/"
+  #   schedule:
+  #     interval: weekly
+
+  # Rust: directory containing Cargo.toml (workspace root for workspaces).
+  # - package-ecosystem: cargo
+  #   directory: "/"
+  #   schedule:
+  #     interval: weekly
+
+  # Docker: directory containing the Dockerfile.
+  # - package-ecosystem: docker
+  #   directory: "/"
+  #   schedule:
+  #     interval: weekly
+
+  # Terraform: independent root modules sharing the same update settings.
+  # Replace these example paths with your actual Terraform directories.
+  # - package-ecosystem: terraform
+  #   directories:
+  #     - "/infra/production"
+  #     - "/infra/staging"
+  #   schedule:
+  #     interval: weekly
